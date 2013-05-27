@@ -13,12 +13,12 @@ Artikel::Artikel(int artikelNr, string bezeichnung)
 {
 	if (artikelNr < 1000 || artikelNr >= 10000)
 	{
-		throw meldung_ArtikelNrNichtVierstellig;
+		throw MSG_ARTIKELNR_NICHT_VIERSTELLIG;
 	}
 
 	if (bezeichnung.empty())
 	{
-		throw meldung_BezeichnungLeer;
+		throw MSG_BEZEICHNUNG_LEER;
 	}
 
 	this->artikelNr = artikelNr;
@@ -31,16 +31,16 @@ Artikel::Artikel(int artikelNr, string bezeichnung, int bestand)
 {
 	if (artikelNr < 1000 || artikelNr >= 10000)
 	{
-		throw meldung_ArtikelNrNichtVierstellig;
+		throw MSG_ARTIKELNR_NICHT_VIERSTELLIG;
 	}
 	if (bezeichnung.empty())
 	{
-		throw meldung_BezeichnungLeer;
+		throw MSG_BEZEICHNUNG_LEER;
 	}
 
 	if (bestand < 0)
 	{
-		throw meldung_BestandNegativ;
+		throw MSG_BESTAND_NEGATIV;
 	}
 
 	this->artikelNr = artikelNr;
@@ -54,22 +54,22 @@ Artikel::Artikel(int artikelNr, string bezeichnung, int bestand,
 {
 	if (artikelNr < 1000 || artikelNr >= 10000)
 	{
-		throw meldung_ArtikelNrNichtVierstellig;
+		throw MSG_ARTIKELNR_NICHT_VIERSTELLIG;
 	}
 
 	if (bezeichnung.empty())
 	{
-		throw meldung_BezeichnungLeer;
+		throw MSG_BEZEICHNUNG_LEER;
 	}
 
 	if (bestand < 0)
 	{
-		throw meldung_BestandNegativ;
+		throw MSG_BESTAND_NEGATIV;
 	}
 
 	if (preis < 0)
 	{
-		throw meldung_PreisNegativ;
+		throw MSG_PREIS_NEGATIV;
 	}
 
 	this->artikelNr = artikelNr;
@@ -82,7 +82,7 @@ void Artikel::bucheZugang(int menge)
 {
 	if (menge < 0)
 	{
-		throw meldung_MegeNegativ;
+		throw MSG_MEGE_NEGATIV;
 	}
 	this->bestand += menge;
 }
@@ -91,12 +91,12 @@ void Artikel::bucheAbgang(int menge)
 {
 	if (menge < 0)
 	{
-		throw meldung_MegeNegativ;
+		throw MSG_MEGE_NEGATIV;
 	}
 
 	if ((this->bestand) - (menge) < 0)
 	{
-		throw meldung_BestandKleinerMenge;
+		throw MSG_BESTAND_KLEINER_MENGE;
 	}
 
 	this->bestand -= menge;
@@ -107,12 +107,12 @@ void Artikel::aenderePreis(double prozent)
 	int hundert = 100;
 	if (prozent > MAX_PREISERHOEHUNG_PROZENT)
 	{
-		throw meldung_PreisaenderungUngueltig;
+		throw MSG_PREIS_AENDERUNG_UNGUELTIG;
 	}
 
 	if (prozent < MAX_PREISSENKUNG_PROZENT)
 	{
-		throw meldung_PreisaenderungUngueltig;
+		throw MSG_PREIS_AENDERUNG_UNGUELTIG;
 	}
 
 

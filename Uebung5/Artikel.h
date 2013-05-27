@@ -20,7 +20,6 @@
 #include <string>
 using namespace std;
 
-
 class Artikel
 {
 public:
@@ -46,7 +45,7 @@ public:
 	 * @param bestand	darf nicht kleiner 0 werden
 	 * @param preis 	darf nicht kleiner 0 werden
 	 */
-	Artikel(int artikelNr, string bezeichnung, int bestand,	double preis);
+	Artikel(int artikelNr, string bezeichnung, int bestand, double preis);
 
 	//virtual ~Artikel();	Destruktor
 
@@ -54,27 +53,27 @@ public:
 	void setArtikelNr(int artikelNrNeu)
 	{
 		if (artikelNrNeu < 1000 || artikelNrNeu >= 10000)
-			{
-				throw meldung_ArtikelNrNichtVierstellig;
-			}
+		{
+			throw MSG_ARTIKELNR_NICHT_VIERSTELLIG;
+		}
 		artikelNr = artikelNrNeu;
 	}
 
 	void setBezeichnung(string bezeichnungNeu)
 	{
 		if (bezeichnungNeu.empty())
-			{
-				throw meldung_BezeichnungLeer;
-			}
+		{
+			throw MSG_BEZEICHNUNG_LEER;
+		}
 		bezeichnung = bezeichnungNeu;
 	}
 
 	void setArtikelPreis(double artikelPreisNeu)
 	{
 		if (artikelPreisNeu < 0)
-			{
-				throw meldung_PreisNegativ;
-			}
+		{
+			throw MSG_PREIS_NEGATIV;
+		}
 		this->preis = artikelPreisNeu;
 	}
 
@@ -102,7 +101,8 @@ public:
 	/** Addiert menge zu bestand
 	 *
 	 * @param menge darf nicht kleiner 0 sein
-	 */	void bucheZugang(int menge);
+	 */
+	void bucheZugang(int menge);
 
 	/** Subtrahiert menge von bestand
 	 *
@@ -124,6 +124,29 @@ public:
 	 * @return String des Artikels
 	 */
 	string toString() const;
+
+	static const char* MSG_ARTIKELNR_NICHT_VORHANDEN =
+			"Artikel ist nicht vorhanden";
+	static const char* MSG_ARTIKELNR_NICHT_VIERSTELLIG =
+			"Artikelnummer muss vierstellig, positiv sein!";
+	static const char* MSG_ARTIKEL_VORHANDEN =
+			"Diese Artikelnummer ist bereits vergeben!";
+	static const char* MSG_BESTAND_NEGATIV = "Bestand muss positiv sein!";
+	static const char* MSG_BEZEICHNUNG_LEER =
+			"Bezeichnung darf nicht leer sein!";
+	static const char* MSG_EINGABE_NEGATIV =
+			"Bitte eine positive Zahl eingeben!";
+	static const char* MSG_EINGABE_KEINE_ZAHL = "Das war keine Zahl!";
+	static const char* MSG_PREIS_NEGATIV = "Preis muss positiv sein!";
+	static const char* MSG_LAGER_LEER = "Das Lager ist leer!";
+	static const char* MSG_LAGER_GROESSE_NEGATIV =
+			"Das Lager muss eine positive Kapazitaet ausweisen";
+	static const char* MSG_MEGE_NEGATIV =
+			"Es duerfen keine negativen Mengen gebucht werden!";
+	static const char* MSG_BESTAND_KLEINER_MENGE =
+			"So viele Artikel sind nicht mehr vorhanden!";
+	static const char* MSG_PREIS_AENDERUNG_UNGUELTIG =
+			"Bitte Preis innerhalb einer Grenze von -70% - 300% aendern!";
 
 private:
 	int artikelNr;

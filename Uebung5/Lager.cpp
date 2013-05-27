@@ -11,6 +11,7 @@
 Lager::Lager(int lagergroesse) {
 	anzahlArtikel = 0;
 	artikelTab = new Artikel*[lagergroesse];
+	this->lagergroesse = lagergroesse;
 }
 
 Lager::Lager(const Lager& lager) {
@@ -46,7 +47,7 @@ Lager& Lager::operator =(const Lager& lager) {
 Lager::~Lager() {
 	cout << "Destruktor"<< endl;
 	loescheAlleArtikel();
-	delete artikelTab;
+	delete[] artikelTab;	//loescht das Array und nicht nur das erste Element
 }
 
 void Lager::legeArtikelAn() {
@@ -82,7 +83,7 @@ void Lager::legeArtikelAn() {
 
 		artikelTab[anzahlArtikel] = new Artikel(nummer, bezeichnung, bestand, preis);
 		anzahlArtikel++;
-	} catch (Fehler & f) {
+	} catch (Fehler &f) {
 		switch (f) {
 		case ArtikelnummerNichtVierstellig:
 			cout << meldung_ArtikelNrNichtVierstellig << endl;
