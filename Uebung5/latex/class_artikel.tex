@@ -1,0 +1,167 @@
+\hypertarget{class_artikel}{\section{Artikel Class Reference}
+\label{class_artikel}\index{Artikel@{Artikel}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_artikel_a1770a6d63d0015ba2b3222d589695228}{Artikel} (int artikel\-Nr, string bezeichnung)
+\item 
+\hyperlink{class_artikel_af7e53e1f156aa25633d3d06a0b0a6cb6}{Artikel} (int artikel\-Nr, string bezeichnung, int bestand)
+\item 
+\hyperlink{class_artikel_a55bea20b3216ca80e6b7d1bde2290922}{Artikel} (int artikel\-Nr, string bezeichnung, int bestand, double preis)
+\item 
+\hypertarget{class_artikel_a44a94786106ffbdbde83a008d8029e32}{void {\bfseries set\-Artikel\-Nr} (int artikel\-Nr\-Neu)}\label{class_artikel_a44a94786106ffbdbde83a008d8029e32}
+
+\item 
+\hypertarget{class_artikel_ae620278a386e5b1515462ab42dbff1d0}{void {\bfseries set\-Bezeichnung} (string bezeichnung\-Neu)}\label{class_artikel_ae620278a386e5b1515462ab42dbff1d0}
+
+\item 
+\hypertarget{class_artikel_aa19a8e0be84324054db4b44ead00691c}{void {\bfseries set\-Artikel\-Preis} (double artikel\-Preis\-Neu)}\label{class_artikel_aa19a8e0be84324054db4b44ead00691c}
+
+\item 
+\hypertarget{class_artikel_a468d4f1867393f4e7d026f1baf95808d}{int {\bfseries get\-Artikel\-Nr} () const }\label{class_artikel_a468d4f1867393f4e7d026f1baf95808d}
+
+\item 
+\hypertarget{class_artikel_a7c3f818ddc4370f4c361a409ff60a600}{double {\bfseries get\-Artikel\-Preis} () const }\label{class_artikel_a7c3f818ddc4370f4c361a409ff60a600}
+
+\item 
+\hypertarget{class_artikel_aab1675e753843c85b2f3105c5c9dd460}{int {\bfseries get\-Bestand} () const }\label{class_artikel_aab1675e753843c85b2f3105c5c9dd460}
+
+\item 
+\hypertarget{class_artikel_ab173b70277cac21450acd4bdc941408f}{const string \& {\bfseries get\-Bezeichnung} () const }\label{class_artikel_ab173b70277cac21450acd4bdc941408f}
+
+\item 
+void \hyperlink{class_artikel_a11dd79f31e2ed3c54af8df13d23f7361}{buche\-Zugang} (int menge)
+\item 
+void \hyperlink{class_artikel_a465e63bd28ab3ce6f66c610d925c9229}{buche\-Abgang} (int menge)
+\item 
+void \hyperlink{class_artikel_a78ac7106b7fc02b416fa8a4e983ae690}{aendere\-Preis} (double prozent)
+\item 
+string \hyperlink{class_artikel_aa03bd2e12c78e38a19ab41d038ff651d}{to\-String} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_artikel_a1770a6d63d0015ba2b3222d589695228}{\index{Artikel@{Artikel}!Artikel@{Artikel}}
+\index{Artikel@{Artikel}!Artikel@{Artikel}}
+\subsubsection[{Artikel}]{\setlength{\rightskip}{0pt plus 5cm}Artikel\-::\-Artikel (
+\begin{DoxyParamCaption}
+\item[{int}]{artikel\-Nr, }
+\item[{string}]{bezeichnung}
+\end{DoxyParamCaption}
+)}}\label{class_artikel_a1770a6d63d0015ba2b3222d589695228}
+Konstruktor mit 2 Parametern
+
+
+\begin{DoxyParams}{Parameters}
+{\em artikel\-Nr} & einzigartig, vierstellig, positiv \\
+\hline
+{\em bezeichnung} & darf nicht leer sein \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_artikel_af7e53e1f156aa25633d3d06a0b0a6cb6}{\index{Artikel@{Artikel}!Artikel@{Artikel}}
+\index{Artikel@{Artikel}!Artikel@{Artikel}}
+\subsubsection[{Artikel}]{\setlength{\rightskip}{0pt plus 5cm}Artikel\-::\-Artikel (
+\begin{DoxyParamCaption}
+\item[{int}]{artikel\-Nr, }
+\item[{string}]{bezeichnung, }
+\item[{int}]{bestand}
+\end{DoxyParamCaption}
+)}}\label{class_artikel_af7e53e1f156aa25633d3d06a0b0a6cb6}
+Kontruktor mit 3 Parametern
+
+
+\begin{DoxyParams}{Parameters}
+{\em artikel\-Nr} & einzigartig, vierstellig, positiv \\
+\hline
+{\em bezeichnung} & darf nicht leer sein \\
+\hline
+{\em bestand} & darf nicht kleiner 0 werden \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_artikel_a55bea20b3216ca80e6b7d1bde2290922}{\index{Artikel@{Artikel}!Artikel@{Artikel}}
+\index{Artikel@{Artikel}!Artikel@{Artikel}}
+\subsubsection[{Artikel}]{\setlength{\rightskip}{0pt plus 5cm}Artikel\-::\-Artikel (
+\begin{DoxyParamCaption}
+\item[{int}]{artikel\-Nr, }
+\item[{string}]{bezeichnung, }
+\item[{int}]{bestand, }
+\item[{double}]{preis}
+\end{DoxyParamCaption}
+)}}\label{class_artikel_a55bea20b3216ca80e6b7d1bde2290922}
+Konstruktor mit 4 Parametern
+
+
+\begin{DoxyParams}{Parameters}
+{\em artikel\-Nr} & einzigartig, vierstellig, positiv \\
+\hline
+{\em bezeichnung} & darf nicht leer sein \\
+\hline
+{\em bestand} & darf nicht kleiner 0 werden \\
+\hline
+{\em preis} & darf nicht kleiner 0 werden \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_artikel_a78ac7106b7fc02b416fa8a4e983ae690}{\index{Artikel@{Artikel}!aendere\-Preis@{aendere\-Preis}}
+\index{aendere\-Preis@{aendere\-Preis}!Artikel@{Artikel}}
+\subsubsection[{aendere\-Preis}]{\setlength{\rightskip}{0pt plus 5cm}void Artikel\-::aendere\-Preis (
+\begin{DoxyParamCaption}
+\item[{double}]{prozent}
+\end{DoxyParamCaption}
+)}}\label{class_artikel_a78ac7106b7fc02b416fa8a4e983ae690}
+Aendert artikel\-Preis um einen bestimmten Prozentsatz. Parameter muss zwischen M\-A\-X\-\_\-\-P\-R\-E\-I\-S\-E\-R\-H\-O\-E\-H\-U\-N\-G\-\_\-\-P\-R\-O\-Z\-E\-N\-T \& M\-A\-X\-\_\-\-P\-R\-E\-I\-S\-S\-E\-N\-K\-U\-N\-G\-\_\-\-P\-R\-O\-Z\-E\-N\-T liegen
+
+
+\begin{DoxyParams}{Parameters}
+{\em prozent} & prozentsatz der Erhoehung \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_artikel_a465e63bd28ab3ce6f66c610d925c9229}{\index{Artikel@{Artikel}!buche\-Abgang@{buche\-Abgang}}
+\index{buche\-Abgang@{buche\-Abgang}!Artikel@{Artikel}}
+\subsubsection[{buche\-Abgang}]{\setlength{\rightskip}{0pt plus 5cm}void Artikel\-::buche\-Abgang (
+\begin{DoxyParamCaption}
+\item[{int}]{menge}
+\end{DoxyParamCaption}
+)}}\label{class_artikel_a465e63bd28ab3ce6f66c610d925c9229}
+Subtrahiert menge von bestand
+
+
+\begin{DoxyParams}{Parameters}
+{\em menge} & darf nicht kleiner 0 sein \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_artikel_a11dd79f31e2ed3c54af8df13d23f7361}{\index{Artikel@{Artikel}!buche\-Zugang@{buche\-Zugang}}
+\index{buche\-Zugang@{buche\-Zugang}!Artikel@{Artikel}}
+\subsubsection[{buche\-Zugang}]{\setlength{\rightskip}{0pt plus 5cm}void Artikel\-::buche\-Zugang (
+\begin{DoxyParamCaption}
+\item[{int}]{menge}
+\end{DoxyParamCaption}
+)}}\label{class_artikel_a11dd79f31e2ed3c54af8df13d23f7361}
+Addiert menge zu bestand
+
+
+\begin{DoxyParams}{Parameters}
+{\em menge} & darf nicht kleiner 0 sein \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_artikel_aa03bd2e12c78e38a19ab41d038ff651d}{\index{Artikel@{Artikel}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Artikel@{Artikel}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Artikel\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_artikel_aa03bd2e12c78e38a19ab41d038ff651d}
+schreibt einen \hyperlink{class_artikel}{Artikel} mit allen Attributen in einen String
+
+\begin{DoxyReturn}{Returns}
+String des Artikels 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_artikel_8h}{Artikel.\-h}\item 
+\hyperlink{_artikel_8cpp}{Artikel.\-cpp}\end{DoxyCompactItemize}
