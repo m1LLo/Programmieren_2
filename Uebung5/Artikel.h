@@ -47,7 +47,7 @@ public:
 	 */
 	Artikel(int artikelNr, string bezeichnung, int bestand, double preis);
 
-	//virtual ~Artikel();	Destruktor
+	~Artikel();	//Destruktor
 
 	// SET-Methoden
 	void setArtikelNr(int artikelNrNeu)
@@ -125,28 +125,19 @@ public:
 	 */
 	string toString() const;
 
-	static const char* MSG_ARTIKELNR_NICHT_VORHANDEN =
-			"Artikel ist nicht vorhanden";
-	static const char* MSG_ARTIKELNR_NICHT_VIERSTELLIG =
-			"Artikelnummer muss vierstellig, positiv sein!";
-	static const char* MSG_ARTIKEL_VORHANDEN =
-			"Diese Artikelnummer ist bereits vergeben!";
-	static const char* MSG_BESTAND_NEGATIV = "Bestand muss positiv sein!";
-	static const char* MSG_BEZEICHNUNG_LEER =
-			"Bezeichnung darf nicht leer sein!";
-	static const char* MSG_EINGABE_NEGATIV =
-			"Bitte eine positive Zahl eingeben!";
-	static const char* MSG_EINGABE_KEINE_ZAHL = "Das war keine Zahl!";
-	static const char* MSG_PREIS_NEGATIV = "Preis muss positiv sein!";
-	static const char* MSG_LAGER_LEER = "Das Lager ist leer!";
-	static const char* MSG_LAGER_GROESSE_NEGATIV =
-			"Das Lager muss eine positive Kapazitaet ausweisen";
-	static const char* MSG_MEGE_NEGATIV =
-			"Es duerfen keine negativen Mengen gebucht werden!";
-	static const char* MSG_BESTAND_KLEINER_MENGE =
-			"So viele Artikel sind nicht mehr vorhanden!";
-	static const char* MSG_PREIS_AENDERUNG_UNGUELTIG =
-			"Bitte Preis innerhalb einer Grenze von -70% - 300% aendern!";
+	static const char* MSG_ARTIKELNR_NICHT_VORHANDEN;
+	static const char* MSG_ARTIKELNR_NICHT_VIERSTELLIG;
+	static const char* MSG_ARTIKEL_VORHANDEN;
+	static const char* MSG_BESTAND_NEGATIV;
+	static const char* MSG_BEZEICHNUNG_LEER;
+	static const char* MSG_EINGABE_NEGATIV;
+	static const char* MSG_EINGABE_KEINE_ZAHL;
+	static const char* MSG_PREIS_NEGATIV;
+	static const char* MSG_LAGER_LEER;
+	static const char* MSG_LAGER_GROESSE_NEGATIV;
+	static const char* MSG_MEGE_NEGATIV;
+	static const char* MSG_BESTAND_KLEINER_MENGE;
+	static const char* MSG_PREIS_AENDERUNG_UNGUELTIG;
 
 private:
 	int artikelNr;

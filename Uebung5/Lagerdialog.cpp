@@ -16,12 +16,12 @@ Lagerdialog::Lagerdialog() {
 					<< endl;
 			lagergroesse = leseInteger();
 			if (lagergroesse <= 0)
-				throw LagergroesseNegativ;
+				throw MSG_LAGER_GROESSE_NEGATIV;
 		lager = new Lager(lagergroesse);
 		} catch (Fehler & f) {
 			switch(f) {
 			case LagergroesseNegativ:
-				cout << meldung_LagergroesseNegativ << endl;
+				cout << MSG_LAGER_GROESSE_NEGATIV << endl;
 				break;
 			}
 		}
@@ -36,7 +36,7 @@ int Lagerdialog::leseInteger() {
 			cin >> zahl;
 
 			if (cin.fail()) {
-				throw meldung_EingabeKeineZahl;
+				throw MSG_EINGABE_KEINE_ZAHL;
 				cin.clear();
 				cin.ignore(256, '\n');
 			}
@@ -104,3 +104,6 @@ void Lagerdialog::hauptmenue() {
 	lager->~Lager();
 }
 
+const char* Lagerdialog::MSG_LAGER_GROESSE_NEGATIV =
+		"Das Lager muss eine positive Kapazitaet ausweisen";
+const char* Lagerdialog::MSG_EINGABE_KEINE_ZAHL = "Das war keine Zahl!";

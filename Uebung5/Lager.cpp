@@ -48,6 +48,7 @@ Lager::~Lager() {
 	cout << "Destruktor"<< endl;
 	loescheAlleArtikel();
 	delete[] artikelTab;	//loescht das Array und nicht nur das erste Element
+	artikelTab = 0;
 }
 
 void Lager::legeArtikelAn() {
@@ -86,19 +87,19 @@ void Lager::legeArtikelAn() {
 	} catch (Fehler &f) {
 		switch (f) {
 		case ArtikelnummerNichtVierstellig:
-			cout << meldung_ArtikelNrNichtVierstellig << endl;
+			cout << MSG_ARTIKELNR_NICHT_VIERSTELLIG << endl;
 			break;
 		case ArtikelVorhanden:
-			cout << meldung_ArtikelVorhanden << endl;
+			cout << MSG_ARTIKEL_VORHANDEN << endl;
 			break;
 		case BezeichnungLeer:
-			cout << meldung_BezeichnungLeer << endl;
+			cout << MSG_BEZEICHNUNG_LEER << endl;
 			break;
 		case BestandNegativ:
-			cout << meldung_BestandNegativ << endl;
+			cout << MSG_BESTAND_NEGATIV << endl;
 			break;
 		case PreisNegativ:
-			cout << meldung_PreisNegativ << endl;
+			cout << MSG_PREIS_NEGATIV << endl;
 			break;
 		}
 	}
@@ -148,13 +149,13 @@ void Lager::bucheMengenZugang() {
 	} catch (Fehler & f) {
 		switch (f){
 		case ArtikelNichtVorhanden:
-			cout << meldung_ArtikelNrNichtVorhanden<< endl;
+			cout << MSG_ARTIKELNR_NICHT_VORHANDEN<< endl;
 			break;
 		case MengeNegativ:
-			cout << meldung_MegeNegativ << endl;
+			cout << MSG_MEGE_NEGATIV << endl;
 			break;
 		case LagerLeer:
-			cout << meldung_LagerLeer << endl;
+			cout << MSG_LAGER_LEER << endl;
 			break;
 		}
 	}
@@ -178,10 +179,10 @@ void Lager::bucheMengenAbgang() {
 	} catch (Fehler & f) {
 			switch (f){
 			case ArtikelNichtVorhanden:
-				cout << meldung_ArtikelNrNichtVorhanden << endl;;
+				cout << MSG_ARTIKELNR_NICHT_VORHANDEN << endl;;
 				break;
 			case LagerLeer:
-				cout << meldung_LagerLeer << endl;
+				cout << MSG_LAGER_LEER << endl;
 				break;
 			}
 	}
@@ -208,13 +209,13 @@ void Lager::aendereArtikelpreis() {
 	} catch (Fehler & f) {
 		switch (f) {
 		case ArtikelNichtVorhanden:
-			cout << meldung_ArtikelNrNichtVorhanden << endl;
+			cout << MSG_ARTIKELNR_NICHT_VORHANDEN << endl;
 			break;
 		case PreisaenderungUngueltig:
-			cout << meldung_PreisaenderungUngueltig << endl;
+			cout << MSG_PREIS_AENDERUNG_UNGUELTIG << endl;
 			break;
 		case LagerLeer:
-			cout << meldung_LagerLeer << endl;
+			cout << MSG_LAGER_LEER << endl;
 			break;
 		}
 	}
@@ -235,10 +236,10 @@ void Lager::aendereAlleArtikelpreise() {
 	} catch (Fehler & f) {
 		switch(f) {
 			case LagerLeer:
-				cout << meldung_LagerLeer << endl;
+				cout << MSG_LAGER_LEER << endl;
 				break;
 			case PreisaenderungUngueltig:
-				cout << meldung_PreisaenderungUngueltig << endl;
+				cout << MSG_PREIS_AENDERUNG_UNGUELTIG << endl;
 				break;
 		}
 	}
@@ -268,13 +269,13 @@ void Lager::loescheArtikel() {
 				<< " wurde geloescht. ###" << endl;
 		anzahlArtikel--;
 
-	} catch (Fehler & f) {
+	} catch (enum Fehler &f) {
 		switch (f) {
 		case LagerLeer:
-			cout << meldung_LagerLeer << endl;
+			cout << MSG_LAGER_LEER << endl;
 			break;
 		case ArtikelNichtVorhanden:
-			cout << meldung_ArtikelNrNichtVorhanden;
+			cout << MSG_ARTIKELNR_NICHT_VORHANDEN;
 			break;
 		}
 	}
@@ -292,7 +293,7 @@ void Lager::loescheAlleArtikel() {
 	} catch (Fehler & f) {
 		switch (f) {
 		case LagerLeer:
-			cout << meldung_LagerLeer << endl;
+			cout << MSG_LAGER_LEER << endl;
 			break;
 		}
 	}
@@ -307,8 +308,31 @@ string Lager::toString() const {
 		for (int i = 0; i < anzahlArtikel; i++)
 			o << artikelTab[i]->toString() << "\n";
 	} catch (Fehler & f) {
-		cout << meldung_LagerLeer << endl;
+		cout << MSG_LAGER_LEER << endl;
 
 	}
 	return o.str();
 }
+
+const char* Lager::MSG_ARTIKELNR_NICHT_VORHANDEN =
+		"Artikel ist nicht vorhanden";
+const char* Lager::MSG_ARTIKELNR_NICHT_VIERSTELLIG =
+		"Artikelnummer muss vierstellig, positiv sein!";
+const char* Lager::MSG_ARTIKEL_VORHANDEN =
+		"Diese Artikelnummer ist bereits vergeben!";
+const char* Lager::MSG_BESTAND_NEGATIV = "Bestand muss positiv sein!";
+const char* Lager::MSG_BEZEICHNUNG_LEER =
+		"Bezeichnung darf nicht leer sein!";
+const char* Lager::MSG_EINGABE_NEGATIV =
+		"Bitte eine positive Zahl eingeben!";
+const char* Lager::MSG_EINGABE_KEINE_ZAHL = "Das war keine Zahl!";
+const char* Lager::MSG_PREIS_NEGATIV = "Preis muss positiv sein!";
+const char* Lager::MSG_LAGER_LEER = "Das Lager ist leer!";
+const char* Lager::MSG_LAGER_GROESSE_NEGATIV =
+		"Das Lager muss eine positive Kapazitaet ausweisen";
+const char* Lager::MSG_MEGE_NEGATIV =
+		"Es duerfen keine negativen Mengen gebucht werden!";
+const char* Lager::MSG_BESTAND_KLEINER_MENGE =
+		"So viele Artikel sind nicht mehr vorhanden!";
+const char* Lager::MSG_PREIS_AENDERUNG_UNGUELTIG =
+		"Bitte Preis innerhalb einer Grenze von -70% - 300% aendern!";

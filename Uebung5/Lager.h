@@ -85,6 +85,21 @@ public:
 	 */
 	~Lager();
 
+	static const char* MSG_ARTIKELNR_NICHT_VORHANDEN;
+	static const char* MSG_ARTIKELNR_NICHT_VIERSTELLIG;
+	static const char* MSG_ARTIKEL_VORHANDEN;
+	static const char* MSG_BESTAND_NEGATIV;
+	static const char* MSG_BEZEICHNUNG_LEER;
+	static const char* MSG_EINGABE_NEGATIV;
+	static const char* MSG_EINGABE_KEINE_ZAHL;
+	static const char* MSG_PREIS_NEGATIV;
+	static const char* MSG_LAGER_LEER;
+	static const char* MSG_LAGER_GROESSE_NEGATIV;
+	static const char* MSG_MEGE_NEGATIV;
+	static const char* MSG_BESTAND_KLEINER_MENGE;
+	static const char* MSG_PREIS_AENDERUNG_UNGUELTIG;
+
+
 
 private:
 	int anzahlArtikel;

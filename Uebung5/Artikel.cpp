@@ -49,8 +49,7 @@ Artikel::Artikel(int artikelNr, string bezeichnung, int bestand)
 	this->preis = 0.0;
 }
 
-Artikel::Artikel(int artikelNr, string bezeichnung, int bestand,
-		double preis)
+Artikel::Artikel(int artikelNr, string bezeichnung, int bestand, double preis)
 {
 	if (artikelNr < 1000 || artikelNr >= 10000)
 	{
@@ -77,6 +76,14 @@ Artikel::Artikel(int artikelNr, string bezeichnung, int bestand,
 	this->bestand = bestand;
 	this->preis = preis;
 }
+
+/**
+ * Destructor
+ */
+Artikel::~Artikel(){
+	//Keine aenderung zum Standard noetig
+}
+
 
 void Artikel::bucheZugang(int menge)
 {
@@ -115,15 +122,36 @@ void Artikel::aenderePreis(double prozent)
 		throw MSG_PREIS_AENDERUNG_UNGUELTIG;
 	}
 
-
-	this->preis = (preis) * (1 + (prozent)/100);
+	this->preis = (preis) * (1 + (prozent) / 100);
 }
 
-string Artikel::toString() const {
+string Artikel::toString() const
+{
 	ostringstream o;
-	o << "ArtikelNr: " << artikelNr << "\t"
-			<< "Bezeichnung: "<< bezeichnung << "\t"
-			<< "Bestand: "<< bestand << "\t"
-			<< "Preis: " << preis;
+	o << "ArtikelNr: " << artikelNr << "\t" << "Bezeichnung: " << bezeichnung
+			<< "\t" << "Bestand: " << bestand << "\t" << "Preis: " << preis;
 	return o.str();
 }
+
+const char* Artikel::MSG_ARTIKELNR_NICHT_VORHANDEN =
+		"Artikel ist nicht vorhanden";
+const char* Artikel::MSG_ARTIKELNR_NICHT_VIERSTELLIG =
+		"Artikelnummer muss vierstellig, positiv sein!";
+const char* Artikel::MSG_ARTIKEL_VORHANDEN =
+		"Diese Artikelnummer ist bereits vergeben!";
+const char* Artikel::MSG_BESTAND_NEGATIV = "Bestand muss positiv sein!";
+const char* Artikel::MSG_BEZEICHNUNG_LEER =
+		"Bezeichnung darf nicht leer sein!";
+const char* Artikel::MSG_EINGABE_NEGATIV =
+		"Bitte eine positive Zahl eingeben!";
+const char* Artikel::MSG_EINGABE_KEINE_ZAHL = "Das war keine Zahl!";
+const char* Artikel::MSG_PREIS_NEGATIV = "Preis muss positiv sein!";
+const char* Artikel::MSG_LAGER_LEER = "Das Lager ist leer!";
+const char* Artikel::MSG_LAGER_GROESSE_NEGATIV =
+		"Das Lager muss eine positive Kapazitaet ausweisen";
+const char* Artikel::MSG_MEGE_NEGATIV =
+		"Es duerfen keine negativen Mengen gebucht werden!";
+const char* Artikel::MSG_BESTAND_KLEINER_MENGE =
+		"So viele Artikel sind nicht mehr vorhanden!";
+const char* Artikel::MSG_PREIS_AENDERUNG_UNGUELTIG =
+		"Bitte Preis innerhalb einer Grenze von -70% - 300% aendern!";

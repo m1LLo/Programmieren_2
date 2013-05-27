@@ -28,6 +28,9 @@ public:
 	void hauptmenue();
 	int leseInteger();
 
+	static const char* MSG_EINGABE_KEINE_ZAHL;
+	static const char* MSG_LAGER_GROESSE_NEGATIV;
+
 private:
 
 	Lager * lager;

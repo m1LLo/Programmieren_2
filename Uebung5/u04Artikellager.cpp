@@ -14,6 +14,7 @@ int main(void) {
 	dialog = new Lagerdialog;
 	dialog->hauptmenue();
 	delete dialog;
+	dialog = 0;
 	return 0;
 }
 
